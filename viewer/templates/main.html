@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+	<head>
+		<title>{{Title}}</title>
+		<link rel="stylesheet" href="{% static "styles.css" %}">
+	</head>
+	<body>
+		<div class="pxfs" style="background-image:url({{Image}});">
+			<div class="pxfs_title">{{Title}}</div>
+			<span class="play_control">
+				<span class="play_ico"></span>
+			</span>
+		</div>
+	</body>
+</html>

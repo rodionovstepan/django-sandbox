@@ -1,0 +1,55 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.pxfs {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.pxfs_title {
+	display: inline-block;
+	position: relative;
+	left: 50px;
+	top: 50px;
+	padding: 5px 10px;
+	font-size: 34px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.75);
+}
+
+.play_ico {
+	width: 22px;
+	height: 24px;
+	margin: 23px 0 0 26px;
+	background-image: url('/static/play.png');
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.play_control {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: solid 2px #fff;
+	display: block;
+	background: rgba(0,0,0,.5);
+	left: 50%;
+	top: 50%;
+	margin-left: -70px;
+	margin-top: -70px;
+	position: relative;
+	-webkit-transition: background .3s linear;
+	-moz-transition: background .3s linear;
+	-o-transition: background .3s linear;
+	transition: background .3s linear;
+}
+
+.play_control:hover {
+	background: rgba(0,0,0,.8);
+	cursor: pointer;
+}
