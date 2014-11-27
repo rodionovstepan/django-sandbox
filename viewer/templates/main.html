@@ -7,12 +7,32 @@
 	</head>
 	<body>
 		<div class="pxfs" style="background-image:url({{Image}});">
-			<div class="pxfs_title unsel">{{Title}}</div>
-			<span class="play_control">
+			<div class="pxfs_title slowly_hide unsel" id="title">{{Title}}</div>
+			<span class="play_control slowly_hide" id="control">
 				<span class="play_ico"></span>
 			</span>
 		</div>
+		<div class="jp-jplayer" id="player"></div>
 	</body>
 	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/jquery.jplayer.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/browser.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/player.js" %}"></script>
+	<script type="text/javascript">
+		var player = new Player({
+			id: 'player',
+			onplay: function() {
+				document.getElementById('title').style.opacity = '0.2';
+				document.getElementById('control').style.opacity = '0';
+			},
+			onended: function() {
+				document.getElementById('title').style.opacity = '1';
+				document.getElementById('control').style.opacity = '1';
+			}
+		});
+
+		document.getElementsByClassName('play_control')[0].onclick = function() {
+			player.play('{{Track}}');
+		};
+	</script>
 </html>

@@ -64,3 +64,10 @@ body {
 	-o-user-select: none;
 	cursor: default;
 }
+
+.slowly_hide {
+	-webkit-transition: opacity 0.4s linear;
+	-moz-transition: opacity 0.4s linear;
+	-o-transition: opacity 0.4s linear;
+	transition: opacity 0.4s linear;
+}
