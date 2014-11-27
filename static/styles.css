@@ -23,6 +23,13 @@ body {
 	background-color: rgba(0,0,0,0.75);
 }
 
+.pxfs_slider {
+	position: fixed;
+	bottom: 0;
+	height: 2px;
+	background-color: #777;
+}
+
 .play_ico {
 	width: 22px;
 	height: 24px;

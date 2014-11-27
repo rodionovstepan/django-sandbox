@@ -12,6 +12,7 @@
 				<span class="play_ico"></span>
 			</span>
 		</div>
+		<div class="pxfs_slider" id="slider"></div>
 		<div class="jp-jplayer" id="player"></div>
 	</body>
 	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
@@ -19,19 +20,26 @@
 	<script type="text/javascript" src="{% static "js/browser.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/player.js" %}"></script>
 	<script type="text/javascript">
+		var title = document.getElementById('title'),
+			 control = document.getElementById('control'),
+			 slider = document.getElementById('slider');
+
 		var player = new Player({
 			id: 'player',
 			onplay: function() {
-				document.getElementById('title').style.opacity = '0.2';
-				document.getElementById('control').style.opacity = '0';
+				title.style.opacity = '0.2';
+				control.style.opacity = '0';
 			},
 			onended: function() {
-				document.getElementById('title').style.opacity = '1';
-				document.getElementById('control').style.opacity = '1';
+				title.style.opacity = '1';
+				control.style.opacity = '1';
+			},
+			ontime: function(p) {
+				slider.style.width = p + '%';
 			}
 		});
 
-		document.getElementsByClassName('play_control')[0].onclick = function() {
+		control.onclick = function() {
 			player.play('{{Track}}');
 		};
 	</script>
