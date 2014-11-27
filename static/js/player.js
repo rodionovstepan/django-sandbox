@@ -28,6 +28,12 @@ var Player = function(params) {
    if (typeof (params.onended) === 'function') {
       this._player.bind($.jPlayer.event.ended, params.onended);
    }
+
+   if (typeof (params.ontime) === 'function') {
+      this._player.bind($.jPlayer.event.timeupdate, function(e) {
+         params.ontime(e.jPlayer.status.currentPercentAbsolute);
+      });
+   }
 };
 
 Player.prototype.play = function(mp3Url) {
