@@ -29,6 +29,7 @@
 			onplay: function() {
 				title.style.opacity = '0.2';
 				control.style.opacity = '0';
+				control.style.display = 'none';
 			},
 			onended: function() {
 				title.style.opacity = '1';
@@ -41,6 +42,10 @@
 
 		control.onclick = function() {
 			player.play('{{Track}}');
+		};
+
+		title.onclick = function() {
+			browser.fullscreen(document.body);
 		};
 	</script>
 </html>

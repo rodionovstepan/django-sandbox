@@ -22,3 +22,13 @@ browser.getFlashVersion = function() {
     }
     return 0;
 };
+
+browser.fullscreen = function(element) {
+    if(element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if(element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if(element.mozRequestFullscreen) {
+        element.mozRequestFullScreen();
+    }
+};
