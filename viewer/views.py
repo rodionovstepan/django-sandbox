@@ -18,6 +18,11 @@ pxs = {
       'Title': 'Выступление Эдди Мерфи',
       'Track': 'http://pixound.ru/audio/1880461425_VvMHR6Uo.mp3',
       'Image': 'http://planetaua.net/uploads/posts/2011-03/1301170613_3.png'
+   },
+   4: {
+      'Title': 'Gemini - Blue',
+      'Track': 'http://pixound.ru/audio/690415014_Vm9mQPPd.mp3',
+      'Image': 'http://img0.joyreactor.cc/pics/post/full/Music%26Atmosphere-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-Gemini-blue-960774.jpeg'
    }
 }
 
@@ -25,7 +30,7 @@ pxs = {
 def px(request, id):
 	id = int(id)
 	
-	if id > 3 or id < 1:
+	if id > 4 or id < 1:
 		raise Http404
 
 	return render_to_response('main.html', pxs[id])
